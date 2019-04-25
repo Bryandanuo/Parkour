@@ -1,5 +1,0 @@
-<?php
-if (isset($_POST['Pilih'])) {$jurusan = $_POST['lokasi'];
-    echo "Lokasi :<b><font color='red'>$lokasi</font></b>";
-}
-?>
