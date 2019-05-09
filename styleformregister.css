@@ -1,0 +1,76 @@
+body {
+	font: 16px/28px, f1;
+	color: #003366;
+	background: url('bg2.jpg');
+	background-size: cover;
+	background-attachment:fixed;
+	margin: 0px;
+}
+
+@font-face {
+    font-family: "f1";
+    src: url('font2.ttf');
+}
+
+.container{
+	height: 90px;
+	background-color: #E9EBEE;
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.8);
+}
+.bulat{
+	float: left;
+	padding-left: 10px;
+	padding-top: 10px;
+	transition: all .2 ease-in-out;
+}
+.bulat:hover{
+	transform: 	scale(1.1);
+}
+
+
+.trans{
+	height: auto;
+	min-height: 100%;
+	width: 70%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #EBEDF3;
+	margin-bottom: -22px;
+}
+
+.pilihan {
+	text-align: center;
+	font-size: 30px;
+	font-family: f1;
+	padding-bottom: 50px;
+}
+
+.logo {	
+	max-width: 50%; 
+	display:block; 
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 30px;
+}
+
+.kotak{
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.kotak:hover{
+	transform: 	scale(1.1);
+}
+
+footer.footer {
+	bottom: 0;
+	padding-top: 2px;
+	color: white;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto; 
+   width:70%;
+   height:20px;
+   background-color: #101820FF;   /* abu ke hitam */
+}

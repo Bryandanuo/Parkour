@@ -1,0 +1,19 @@
+body {
+	font: 16px/28px, arial;
+	color: black;
+	background-image: url('bekgron.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.kotakan {
+	height: 1000px;
+	background-color: #EBEDF3;
+	align-items: center;
+	justify-content: center;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	background-image: url('bekgron.png');
+	text-decoration: none;
+}

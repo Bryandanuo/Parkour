@@ -1,0 +1,17 @@
+body {
+	font: 16px/28px, verdana;
+	color: #003366;
+	background: url('bg2.jpg');
+	background-size: cover;
+	background-attachment:fixed;
+}
+
+.trans{
+	height: auto;
+	min-height: 100%;
+	width: 70%;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #EBEDF3;
+	margin-bottom: -22px;
+}
