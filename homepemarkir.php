@@ -1,38 +1,44 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
+<style>
+<?php include 'style.css'; ?>
+</style>
 <head>
 	<title>Parkour|Cara Mudah, Cari Parkir</title>
 </head>
 
 <body>
-	<header>
-		<h1>Parkour</h1>
-		<h3>Cara Mudah, Cari Parkir</h3>
-	</header>
-<a href='index.php'>Logout</a>
-<br>
-
-<br>
-
+<header>
+</header>
+<div class="kotakan">
+		<div class="container">
+		<a href='homepemarkir.php'>
+		<img class="kotak"src='p bulat.png' width='70' height='70' title='Home' alt='pemarkir' border='none' /></a>
+		<div class="loginregister">
+			<a href='konfirmasipemarkir.php?konfirmasi_mail=$mail'>Form Konfirmasi Pembayaran</a> |
+			<a href='histori.php?histori_mail=$mail'>History Pemesanan</a> |
+			<a href='logoutpemarkir.php'>Logout</a>
 				<?php
 					$dbc=mysqli_connect('localhost','root','','parkour');
-					$idh = $_GET["homepemarkir_mail"];
+					$mail=$_SESSION['email'];
 				?>
+		</div>
+		</div>
+		<img class="logo"src="parkour.png">
 
-<a href='histori.php'>History Pemesanan</a>
-
-	
+	<div class="isi">
 	<form action="checkout.php" method="POST">
 
-		<fieldset>
-		<p>
-			<label for="mail">Email Anda yang sudah terdaftar: </label>
-			<input type="text" name="mail" placeholder="Email Anda" />
-		</p>
-		<p>
-			<label for="kp">Kantong Parkir: </label>
-			<select name="kp">
-			<option selected="selected">Kantong Parkir</option>
+
+
+			<p>
+				<label for="kp">Kantong Parkir: </label>
+				<div class="kp">
+				<select name="kp">
 				<?php
 					$dbc=mysqli_connect('localhost','root','','parkour');;
 					$query = "select namakp from kantongparkir";
@@ -43,78 +49,37 @@
 					}
 				?>
 			</select>
-		</p>
-		<p>
-			<label for="tgl">Tanggal: </label>
-			<select name="tgl">
-			<option selected="selected">Tanggal</option>
-			<?php
-				for($a=1; $a<=31; $a+=1){
-    			echo"<option value=$a> $a </option>";
-				}
-			?>
-			</select>
-		</p>
-		<p>
-			<label for="bln">Bulan: </label>
-			<select name="bln">
-			<option selected="selected">Bulan</option>
-			<?php
-				$bulan=array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
-				$jlh_bln=count($bulan);
-				for($c=0; $c<$jlh_bln; $c+=1){
-			    echo"<option value=$bulan[$c]> $bulan[$c] </option>";
-				}
-			?>
-			</select>
-		</p>
-		<p>
-			<label for="thn">Tahun:</label>
-			<select name="thn">
-			<option selected="selected">Tahun</option>
-			<option value="2019">2019</option>
-			<option value="2020">2020</option>
-			<option value="2021">2021</option>
-			<option value="2022">2022</option>
-	        </select>
-		</p>
-			</select>
-		</p>
-		<p>
-			<label for="jenislangganan">Jenis Langganan: </label>
-			<select name="jenislangganan">
-			<option selected="selected">Jenis Langganan</option>
-			<option value="isidental">Isidental</option>
-			<option value="tigahari">Tiga Hari</option>
-			<option value="seminggu">Seminggu</option>
-	        </select>
-		</p>
-		<p>
-			<label for="jeniskendaraan">Jenis Kendaraan: </label>
-			<label><input type="radio" name="jeniskendaraan" value="Mobil"> Mobil</label>
-			<label><input type="radio" name="jeniskendaraan" value="Motor"> Motor</label>
-		</p>
-		<p>
-			<input type="submit" value="Pesan" name="pesan" />
-		</p>
-		</fieldset>
-	</form>
-
-
+			</div>
+			</p>
+			<p>
+				<label for="jenislangganan">Jenis Langganan: </label>
+				<div class="kp">
+				<select name="jenislangganan">
+				<option value="Isidental">Isidental</option>
+				<option value="Tiga Hari">Tiga Hari</option>
+				<option value="Seminggu">Seminggu</option>
+		        </select>
+		    	</div>
+			</p>
+			<p>
+				<label  for="tgl">Tanggal: </label>
+				<label><input class="kp" type="datetime-local" name="tgl" required / input></label>
+			</p>
+			<p>
+				<label for="jeniskendaraan">Jenis Kendaraan: </label>
+				<label><input type="radio" name="jeniskendaraan" value="Mobil" required / input> Mobil</label>
+				<label><input type="radio" name="jeniskendaraan" value="Motor" required/input> Motor</label>
+			</p>
+			<p>
+				<input class="tombol" type="submit" value="Cari Parkir!" name="pesan" />
+			</p>
+		</form>
+		</div>
+	<div class="ctt"><?php 
+echo "*Jika Anda memilih Isidental sebagai jenis langganan, maka biaya yang dikenakan adalah biaya perjam."
+	?>
+	</div>
+	<div class="footer">Copyright©PARKOUR 2019 </div>
+	</div>
 	</body>
-</html>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
-<head>
-	<title>untitled</title>
-	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<meta name="generator" content="Geany 1.33" />
-</head>
-
-<body>
-	
-</body>
-
 </html>

@@ -9,8 +9,9 @@
 
 <body>
 	<header>
-		<h1>Parkour</h1>
-		<h3>Cara Mudah, Cari Parkir</h3>
+		<div class="container">
+			<h1>P A R K O U R</h1>
+		</div>
 	</header>
 
 	<?php
@@ -27,14 +28,16 @@
 
 	<br/>
 	<br/>
-		
 		<div class="kotak_login">
+			<div class="tulisan_login">
+			<h1>Log In ke Akun PARKOUR</h1>
+			</div>
 		<form>
 			<label>Username</label>
-			<input type="text" name="username" class="form_login" placeholder="masukkan email ..">
+			<input type="text" name="username" class="form_login" placeholder="masukkan email ...">
 	 
 			<label>Password</label>
-			<input type="text" name="password" class="form_login" placeholder="massukan password ..">
+			<input type="password" name="password" class="form_login" placeholder="masukkan password ...">
 	 
 			<input type="submit" class="tombol_login" value="LOGIN">
 	 
@@ -51,4 +54,3 @@
 	
 </body>
 </html>
-
